@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza time</title>
+</head>
+<body>
+    
+    <script type="text/JavaScript">
+        var tamaño= parseInt(prompt("Ingrese tamaño de pizza \n 1: Chica \n 2: Mediana \n 3: Grande \n 4: Framiliar"))
+        var cantPizzas= parseInt(prompt("Ingrese la cantidad de pizzas"))
+        var numIngre=parseInt(prompt("Ingresa el numero de ingredientes"))
+        var precio=0
+        var error= false
+
+        if(numIngre<1){
+            alert("No te pases de lanza v:")
+        }else{
+            switch (tamaño) {
+                case 1:
+                    if(numIngre==1){
+                        precio= 80*cantPizzas
+                    }else{
+                        precio= cantPizzas*(precio+80+(5*numIngre))
+                    }                
+                    break;
+
+                case 2:
+                if(numIngre==1){
+                        precio= 100*cantPizzas
+                    }else{
+                        precio= cantPizzas*(precio+100+(5*numIngre))  
+                    }                
+                    break;
+
+                case 3:
+                    if(numIngre==1){
+                        precio= 120*cantPizzas
+                    }else{
+                        precio= cantPizzas*(precio+120+(5*numIngre))
+                    }                
+                    break;
+
+                case 4:
+                    if(numIngre==1){
+                        precio= 150*cantPizzas
+                    }else{
+                        precio= cantPizzas*(precio+150+(5*numIngre))
+                    }                
+                    break;
+            
+                default:
+                    alert("Valor erroneo")
+                    break;
+            }
+
+            if(!error){
+                alert("Total a pagar $"+precio)
+            }
+        }
+        
+
+        
+
+    </script>
+
+</body>
+</html>

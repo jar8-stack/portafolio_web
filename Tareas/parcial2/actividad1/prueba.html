@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probando JavaScript</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var operacion; 
+        var r=0
+
+        var error= false
+
+        var n1= prompt("Ingresa un numero");
+        var n2= prompt("Ingresa el segundo numero")
+
+        operacion= prompt("Ingresa la operación 1=+, 2=-, 3=*, 4=/");
+
+
+        /* 
+        alert('Hola '+nombre);    
+        */
+
+        switch (operacion) {
+            case "1":
+                r= parseInt(n1)+parseInt(n2)                     
+                break;
+            case "2":
+                r= parseInt(n1)-parseInt(n2)                  
+                break;
+
+            case "3": 
+                r=parseInt(n1)*parseInt(n2)                  
+                break;
+
+            case "4": 
+                r=parseInt(n1)/parseInt(n2)                   
+                break;
+
+            default:
+                console.log('Opción erronea');
+                error= true
+                break;
+        }
+
+        if(!error){
+            alert("El resultado es: "+r)
+        }
+
+        
+
+        
+
+        //document.write("Aprobado: "+calificación);
+    </script>
+</body>
+</html>

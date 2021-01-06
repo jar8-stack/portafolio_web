@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros primos</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var num= parseInt(prompt("Ingresa un numero"))
+        var err=true
+
+        if(num===0 || num===1 || num===4){
+            alert("No es primo")
+        }else{
+            for(let i=2; i<num; i++){
+                if(num%i ===0){
+                    err=false
+                    break; 
+                }
+            }
+
+            if(err){
+                alert("Es primo")
+            } else{
+                alert("No es primo")
+            }           
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

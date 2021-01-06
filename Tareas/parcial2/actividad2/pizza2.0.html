@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza time 2</title>
+</head>
+<body>
+    <h1>Pizzeria</h1>
+    <form action="">
+        <label for="">Eliga el tamaño de las pizzas</label>
+        <input type="radio" id="op" value="1" name="operacion"> Chica
+        <input type="radio" id="op" value="2" name="operacion"> Mediana
+        <input type="radio" id="op" value="3" name="operacion"> Grande 
+        <input type="radio" id="op" value="4" name="operacion"> Familiar
+        <br><br>
+        <label for="">Numero de pizzas</label>
+        <input for="" type="text" name="hPizzas" id="nPizzas">
+        <br><br>
+        <label for="">Numero de ingredientes por pizza</label>
+        <input for="" type="text" name="nIngredientes" id="nIngredientes">
+        <br><br>
+        <input type="button" onclick="callPizza()" value="Calcular la cuenta" id="calcular">   
+    </form>
+    
+
+    <script type="text/javascript">
+        
+        function callPizza(){
+
+            const op=document.querySelectorAll('input[name="operacion"]');        
+            var selectedValue; 
+            for(const rb of op){
+                if(rb.checked){
+                    selectedValue= rb.value
+                    break;
+                }                
+            }
+
+            if(document.getElementById("nPizzas").value!='' && document.getElementById("nIngredientes").value!='' && selectedValue != null){                
+
+                var cantPizzas= parseInt(document.getElementById("nPizzas").value)
+                var numIngre=parseInt(document.getElementById("nIngredientes").value);
+
+                var precio=0
+                var error= false
+
+                if(numIngre<1){
+                    alert("No te pases de lanza v:")
+                }else{
+                    switch (parseInt(selectedValue)) {
+                        case 1:
+                            if(numIngre==1){
+                                precio= 80*cantPizzas
+                            }else{
+                                precio= cantPizzas*(precio+80+(5*numIngre))
+                            }                
+                            break;
+
+                        case 2:
+                        if(numIngre==1){
+                                precio= 100*cantPizzas
+                            }else{
+                                precio= cantPizzas*(precio+100+(5*numIngre))  
+                            }                
+                            break;
+
+                        case 3:
+                            if(numIngre==1){
+                                precio= 120*cantPizzas
+                            }else{
+                                precio= cantPizzas*(precio+120+(5*numIngre))
+                            }                
+                            break;
+
+                        case 4:
+                            if(numIngre==1){
+                                precio= 150*cantPizzas
+                            }else{
+                                precio= cantPizzas*(precio+150+(5*numIngre))
+                            }                
+                            break;
+                    
+                        default:
+                            alert("Valor erroneo")
+                            break;
+                    }
+
+                    if(!error){
+                        alert("Total a pagar $"+precio)
+                    }
+            }
+            }else{
+                alert("Inserta valores")
+            }            
+        }
+
+        
+    </script>
+</body>
+</html>
